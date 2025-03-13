@@ -1,4 +1,5 @@
 import { json, type MetaFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -10,8 +11,10 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   const {blogs} = useLoaderData<typeof loader>(); 
   return (
-    <div className="flex h-screen items-center justify-center">
-      Homepage
+    <div className="grid grid-cols-4 gap-4">
+      {blogs.map(blog => (
+        <div key={blog.id}>{blog.body} </div>
+      ))}
     </div>
   );
 }
