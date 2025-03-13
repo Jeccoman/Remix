@@ -11,9 +11,9 @@ export const meta: MetaFunction = () => {
 export default function Index() {
   const {blogs} = useLoaderData<typeof loader>(); 
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className=" grid grid-cols-4 gap-4">
       {blogs.map(blog => (
-        <div key={blog.id}>{blog.body} </div>
+        <div className="shadow-md " key={blog.id}>{blog.body} </div>
       ))}
     </div>
   );
