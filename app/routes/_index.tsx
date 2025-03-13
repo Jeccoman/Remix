@@ -1,5 +1,5 @@
 import { json, type MetaFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 
 export const meta: MetaFunction = () => {
   return [
@@ -12,8 +12,8 @@ export default function Index() {
   const {blogs} = useLoaderData<typeof loader>(); 
   return (
     <div className=" grid grid-cols-4 gap-4">
-      {blogs.map(blog => (
-        <div className="shadow-md " key={blog.id}>{blog.body} </div>
+       {blogs.map(blog => (
+        <Link to={`/blogs/${blog.id} `} className="shadow-md p-3 rounded-sm" key={blog.id}>{blog.body} </Link>
       ))}
     </div>
   );
