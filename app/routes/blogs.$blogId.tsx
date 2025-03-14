@@ -14,10 +14,13 @@ const Blog = () => {
      const {blog} = useLoaderData<typeof loader>();
   return (
     <div>
-        <p>{blog.title} </p>
-        <h1> {blog.body} </h1>
+      <h1>{blog.title}</h1>
+      <p>{blog.body}</p>
+      <h2>
+        hhhhhh
+      </h2>
     </div>
-  )
+  );
 }
 
 export default Blog
