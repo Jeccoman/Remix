@@ -15,7 +15,7 @@ const Blog = () => {
   return (
     <div>
       <h1>{blog.title}</h1>
-      <p>{blog.body}</p>
+  
       <h2>
         hhhhhh
       </h2>
